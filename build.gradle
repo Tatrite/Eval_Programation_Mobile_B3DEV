@@ -23,6 +23,8 @@ dependencies {
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    implementation 'com.github.docker-java:docker-java-core:3.4.0'
+    implementation 'com.github.docker-java:docker-java-transport-httpclient5:3.4.0'
 }
 
 tasks.named('test') {

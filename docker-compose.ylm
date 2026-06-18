@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  main_proxy:
+    build: .
+    image: eval_programation_mobile_b3dev:latest # Nom de l'image que le code Java va dupliquer
+    ports:
+      - "8080:8080"
+    volumes:
+      # CRUCIAL : Permet au conteneur Java de commander le Docker de ta machine
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - tor-network
+
+networks:
+  tor-network:
+    driver: bridge
