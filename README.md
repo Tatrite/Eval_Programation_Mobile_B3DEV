@@ -12,9 +12,10 @@ Le tout doit fonctionner dans docker
 
 ### Bonus :
 * Sécurité: 
-  - Login
-  - Mdp
+  - Login [ ]
+  - Mdp [ ]
 
-* Nb de port illimité,
-* Gestionére
-* Sripte de départ
+* Nb de port illimité, [X]
+* ~~Gestionére [ ]~~
+* Sripte de départ [ ]
+* UI visuelle de la chaine [ ]

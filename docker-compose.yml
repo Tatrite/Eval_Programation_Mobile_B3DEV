@@ -1,17 +1,28 @@
+version: '3.8'
+
 services:
-  main_proxy:
+  chef_proxy:
     build: .
-    image: eval_programation_mobile_b3dev:latest
+    image: tor-app:latest
     ports:
       - "8080:8080"
     environment:
       - ROLE=CHEF
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+      - CONTAINER_NAME=chef_proxy
+      - REGISTRY_URL=http://registre:8090
+    networks:
+      - tor-network
+
+  registre:
+    image: tor-app:latest
+    ports:
+      - "8090:8090"
+    environment:
+      - ROLE=REGISTRE
+      - SERVER_PORT=8090
     networks:
       - tor-network
 
 networks:
   tor-network:
     name: tor-network
-    driver: bridge
